@@ -10,3 +10,16 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
+
+switch:
+  - platform: wake_on_lan
+    mac: !secret lgtv_mac_address
+
+webostv:
+  host: 192.168.1.116
+  name: LG TV
+  turn_on_action:
+    service: switch.turn_on
+    target:
+      entity_id: switch.wake_on_lan
+

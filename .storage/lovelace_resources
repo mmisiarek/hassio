@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "key": "lovelace_resources",
+    "data": {
+        "items": [
+            {
+                "url": "/local/mini-media-player-bundle.js?v=1.12.0",
+                "type": "module",
+                "id": "fe124c0ce0cb4daaa7cbcbb290d9c63b"
+            }
+        ]
+    }
+}

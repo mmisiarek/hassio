@@ -6,11 +6,18 @@
 !.gitignore
 !*.md
 !gitupdate.sh
+!/www
+!/www/*
+
+!.storage/
 
 # Ignore folders.
-.storage
+.storage/*
 .cloud
 .google.token
+
+!.storage/lovelace*
+
 
 # Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.
 ip_bans.yaml
