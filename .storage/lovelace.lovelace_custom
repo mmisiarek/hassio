@@ -6,6 +6,140 @@
             "title": "Home",
             "views": [
                 {
+                    "icon": "mdi:lightbulb-on",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "horizontal-stack",
+                            "cards": [
+                                {
+                                    "type": "vertical-stack",
+                                    "cards": [
+                                        {
+                                            "type": "vertical-stack",
+                                            "cards": [
+                                                {
+                                                    "type": "markdown",
+                                                    "content": "# LIVING ROOM"
+                                                },
+                                                {
+                                                    "type": "horizontal-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "button",
+                                                            "tap_action": {
+                                                                "action": "toggle"
+                                                            },
+                                                            "entity": "switch.kitchen_light_lower"
+                                                        },
+                                                        {
+                                                            "type": "button",
+                                                            "tap_action": {
+                                                                "action": "toggle"
+                                                            },
+                                                            "entity": "switch.kitchen_light_upper"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "horizontal-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "button",
+                                                            "tap_action": {
+                                                                "action": "toggle"
+                                                            },
+                                                            "entity": "light.one_photo"
+                                                        },
+                                                        {
+                                                            "type": "button",
+                                                            "tap_action": {
+                                                                "action": "toggle"
+                                                            },
+                                                            "entity": "light.gallery"
+                                                        },
+                                                        {
+                                                            "type": "button",
+                                                            "tap_action": {
+                                                                "action": "toggle"
+                                                            },
+                                                            "entity": "light.big_photos"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "horizontal-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "button",
+                                                            "tap_action": {
+                                                                "action": "toggle"
+                                                            },
+                                                            "entity": "light.table",
+                                                            "show_state": false
+                                                        },
+                                                        {
+                                                            "type": "button",
+                                                            "tap_action": {
+                                                                "action": "toggle"
+                                                            },
+                                                            "entity": "light.table_2",
+                                                            "show_state": false
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "button",
+                                                    "tap_action": {
+                                                        "action": "toggle"
+                                                    },
+                                                    "entity": "light.thelamp"
+                                                },
+                                                {
+                                                    "type": "horizontal-stack",
+                                                    "cards": [
+                                                        {
+                                                            "type": "button",
+                                                            "tap_action": {
+                                                                "action": "toggle"
+                                                            },
+                                                            "entity": "light.coffee_table"
+                                                        },
+                                                        {
+                                                            "type": "button",
+                                                            "tap_action": {
+                                                                "action": "toggle"
+                                                            },
+                                                            "entity": "light.reading"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "markdown",
+                                    "content": "# MIKI"
+                                },
+                                {
+                                    "type": "button",
+                                    "tap_action": {
+                                        "action": "toggle"
+                                    },
+                                    "entity": "switch.miki_light",
+                                    "icon": "hass:lightbulb"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
                     "title": "Media",
                     "path": "media",
                     "icon": "mdi:play-pause",
@@ -165,6 +299,25 @@
                                     "volume_stateless": true
                                 }
                             ]
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.asuswrt_devices_connected"
+                                },
+                                {
+                                    "entity": "sensor.asuswrt_download_speed"
+                                },
+                                {
+                                    "entity": "sensor.asuswrt_upload_speed"
+                                },
+                                {
+                                    "entity": "device_tracker.michals_iphone"
+                                }
+                            ],
+                            "title": "Router",
+                            "state_color": false
                         }
                     ]
                 },

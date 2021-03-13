@@ -23,3 +23,34 @@ webostv:
     target:
       entity_id: switch.wake_on_lan
 
+
+fan:
+  # Miki's room
+  - platform: xiaomi_miio
+    name: 'Miki Air Purifier'
+    host: 192.168.1.119
+    token: !secret xiaomi_air2_token
+  # Bedroom
+  - platform: xiaomi_miio
+    name: 'Bedroom Air Purifier'
+    host: 192.168.1.21
+    token: !secret xiaomi_air3_token
+    
+ios:
+  actions:
+    - name: mytuner
+      background_color: "#88423b"
+      label:
+        text: "Turn on myTuner"
+        color: "#ffffff"
+      icon:
+        icon: radio
+        color: "#ffffff"
+    - name: bedtime
+      background_color: "#38285c"
+      label:
+        text: "Good night"
+        color: "#ffffff"
+      icon:
+        icon: weather-night
+        color: "#ffffff"

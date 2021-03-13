@@ -8,6 +8,8 @@
 !gitupdate.sh
 !/www
 !/www/*
+!/docs
+!/docs/**/*
 
 !.storage/
 

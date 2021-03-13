@@ -1,1 +1,317 @@
-[]
+- id: '1615477995092'
+  alias: Ikea Switch Center
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 302eee40b23acaab13d1db7e7d402ffa
+    type: action
+    subtype: toggle
+    discovery_id: 0xd0cf5efffec2ec34 action_toggle
+  condition: []
+  action:
+  - type: toggle
+    device_id: b535d71c7ad4b6648552c05ef302cdb4
+    entity_id: light.thelamp
+    domain: light
+  mode: single
+- id: '1615478159193'
+  alias: Bathroom Motion Detected
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: cbe0d22ee9a4bbc4482e9ca2de62b31a
+    entity_id: binary_sensor.motion_bathroom_occupancy
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 4b8279041cf7027ce05670210a0c0ba4
+    entity_id: light.bathroom
+    domain: light
+  mode: single
+- id: '1615478215611'
+  alias: Bathroom Motion not detected
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: cbe0d22ee9a4bbc4482e9ca2de62b31a
+    entity_id: binary_sensor.motion_bathroom_occupancy
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 4b8279041cf7027ce05670210a0c0ba4
+    entity_id: light.bathroom
+    domain: light
+  mode: single
+- id: '1615485934179'
+  alias: Switch Miki Single Click
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: ad969014f8a252a272761601cd0e52a8
+    type: action
+    subtype: single
+    discovery_id: 0x00158d0004023b42 action_single
+  condition: []
+  action:
+  - type: toggle
+    device_id: d3545e1f2ea774f413f30115203a0ace
+    entity_id: switch.miki_light
+    domain: switch
+  mode: single
+- id: '1615486098226'
+  alias: Switch Ela Double Click
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: e2eabcdf4ae795beaf273895e00a110f
+    type: action
+    subtype: double
+    discovery_id: 0x00158d00020f1cc1 action_double
+  condition: []
+  action:
+  - type: toggle
+    device_id: 9516db1257b623c297e2cc11862037c3
+    entity_id: light.hallway
+    domain: light
+  mode: single
+- id: '1615486182242'
+  alias: Switch Ela Long Click
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: e2eabcdf4ae795beaf273895e00a110f
+    type: action
+    subtype: hold
+    discovery_id: 0x00158d00020f1cc1 action_hold
+  condition: []
+  action:
+  - service: light.turn_off
+    target:
+      area_id: living_room
+      device_id:
+      - 9516db1257b623c297e2cc11862037c3
+      - 4b8279041cf7027ce05670210a0c0ba4
+  mode: single
+- id: '1615486776576'
+  alias: Switch Ela Single Click
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: e2eabcdf4ae795beaf273895e00a110f
+    type: action
+    subtype: single
+    discovery_id: 0x00158d00020f1cc1 action_single
+  condition: []
+  action:
+  - service: light.turn_on
+    data:
+      brightness_pct: 1
+    target:
+      device_id:
+      - b535d71c7ad4b6648552c05ef302cdb4
+      - 9516db1257b623c297e2cc11862037c3
+  mode: single
+- id: '1615566350311'
+  alias: Switch Miki Double Click
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: ad969014f8a252a272761601cd0e52a8
+    type: click
+    subtype: double
+    discovery_id: 0x00158d0004023b42 click_double
+  condition: []
+  action:
+  - type: toggle
+    device_id: d909a97685bcbb28685fdf69455f9aa1
+    entity_id: light.miki_yeelight_lamp
+    domain: light
+  mode: single
+- id: '1615571642770'
+  alias: Hallway motion detected
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 58c582146791e569d76b20346b88b80e
+    entity_id: binary_sensor.motion_hallway_occupancy
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 9516db1257b623c297e2cc11862037c3
+    entity_id: light.hallway
+    domain: light
+    brightness_pct: 1
+  mode: single
+- id: '1615571685678'
+  alias: Hallway motion not detected
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: 58c582146791e569d76b20346b88b80e
+    entity_id: binary_sensor.motion_hallway_occupancy
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 9516db1257b623c297e2cc11862037c3
+    entity_id: light.hallway
+    domain: light
+  mode: single
+- id: '1615571751745'
+  alias: Miki motion not detected
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: 5a1963055d9bfcd9826b6327b09889ca
+    entity_id: binary_sensor.motion_miki_occupancy
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 3
+      seconds: 0
+      milliseconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: d3545e1f2ea774f413f30115203a0ace
+    entity_id: switch.miki_light
+    domain: switch
+  - type: turn_off
+    device_id: d909a97685bcbb28685fdf69455f9aa1
+    entity_id: light.miki_yeelight_lamp
+    domain: light
+  mode: single
+- id: '1615575331080'
+  alias: Ikea Switch Bright Up
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 302eee40b23acaab13d1db7e7d402ffa
+    type: action
+    subtype: brightness_up_click
+    discovery_id: 0xd0cf5efffec2ec34 action_brightness_up_click
+  condition: []
+  action:
+  - type: brightness_increase
+    device_id: b535d71c7ad4b6648552c05ef302cdb4
+    entity_id: light.thelamp
+    domain: light
+  mode: single
+- id: '1615575384361'
+  alias: Ikea Switch Bright Down
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 302eee40b23acaab13d1db7e7d402ffa
+    type: action
+    subtype: brightness_down_click
+    discovery_id: 0xd0cf5efffec2ec34 action_brightness_down_click
+  condition: []
+  action:
+  - type: brightness_decrease
+    device_id: b535d71c7ad4b6648552c05ef302cdb4
+    entity_id: light.thelamp
+    domain: light
+  mode: single
+- id: '1615575550095'
+  alias: Ikea Switch Left
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 302eee40b23acaab13d1db7e7d402ffa
+    type: action
+    subtype: arrow_left_click
+    discovery_id: 0xd0cf5efffec2ec34 action_arrow_left_click
+  condition: []
+  action:
+  - type: toggle
+    device_id: c647300c0af343d2b24eae0d53ec7352
+    entity_id: switch.kitchen_light_lower
+    domain: switch
+  mode: single
+- id: '1615575639914'
+  alias: Ikea Switch Right
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 302eee40b23acaab13d1db7e7d402ffa
+    type: action
+    subtype: arrow_right_click
+    discovery_id: 0xd0cf5efffec2ec34 action_arrow_right_click
+  condition: []
+  action:
+  - type: toggle
+    device_id: c647300c0af343d2b24eae0d53ec7352
+    entity_id: switch.kitchen_light_upper
+    domain: switch
+  mode: single
+- id: '1615586151947'
+  alias: Ikea Switch Toggle Hold
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 302eee40b23acaab13d1db7e7d402ffa
+    type: action
+    subtype: toggle_hold
+    discovery_id: 0xd0cf5efffec2ec34 action_toggle_hold
+  condition: []
+  action:
+  - service: light.turn_off
+    target:
+      area_id: living_room
+  - type: turn_off
+    device_id: c647300c0af343d2b24eae0d53ec7352
+    entity_id: switch.kitchen_light_lower
+    domain: switch
+  - type: turn_off
+    device_id: c647300c0af343d2b24eae0d53ec7352
+    entity_id: switch.kitchen_light_upper
+    domain: switch
+  mode: single
+- id: '1615586831061'
+  alias: Ikea Switch Bright Down Hold
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 302eee40b23acaab13d1db7e7d402ffa
+    type: action
+    subtype: brightness_down_hold
+    discovery_id: 0xd0cf5efffec2ec34 action_brightness_down_hold
+  condition: []
+  action:
+  - scene: scene.chill
+  mode: single
+- id: '1615586904480'
+  alias: Ikea Switch Bright Up Hold
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: 302eee40b23acaab13d1db7e7d402ffa
+    type: action
+    subtype: brightness_up_hold
+    discovery_id: 0xd0cf5efffec2ec34 action_brightness_up_hold
+  condition: []
+  action:
+  - scene: scene.dinner
+  mode: single

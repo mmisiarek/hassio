@@ -1,0 +1,278 @@
+- id: '1615586416573'
+  name: Dinner
+  entities:
+    light.table:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 33
+      linkquality: 69
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Table
+      supported_features: 45
+    light.table_2:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 43
+      linkquality: 69
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Table 2
+      supported_features: 45
+    light.big_photos:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 3
+      linkquality: 68
+      state: 'off'
+      update:
+        state: available
+      update_available: true
+      friendly_name: Big Photos
+      supported_features: 45
+    light.one_photo:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 3
+      linkquality: 69
+      state: 'off'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: One Photo
+      supported_features: 45
+    light.gallery:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 3
+      linkquality: 69
+      state: 'off'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Gallery
+      supported_features: 45
+    light.thelamp:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 26
+      linkquality: 69
+      state: 'off'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: TheLamp
+      supported_features: 45
+    light.coffee_table:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 3
+      linkquality: 68
+      state: 'off'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Coffee Table
+      supported_features: 45
+    light.reading:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 84
+      linkquality: 68
+      state: 'off'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Reading
+      supported_features: 45
+    switch.kitchen_light_lower:
+      friendly_name: Kitchen Light Lower
+      icon: hass:lightbulb
+      state: 'off'
+    switch.kitchen_light_upper:
+      friendly_name: Kitchen Light Upper
+      icon: hass:lightbulb
+      state: 'off'
+- id: '1615586736600'
+  name: Chill
+  entities:
+    light.thelamp:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 64
+      linkquality: 68
+      state: 'off'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: TheLamp
+      supported_features: 45
+    light.one_photo:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 3
+      linkquality: 68
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: One Photo
+      supported_features: 45
+    light.big_photos:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 3
+      linkquality: 68
+      state: 'on'
+      update:
+        state: available
+      update_available: true
+      friendly_name: Big Photos
+      supported_features: 45
+    light.gallery:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 3
+      linkquality: 68
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Gallery
+      supported_features: 45
+    light.coffee_table:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 3
+      linkquality: 68
+      state: 'on'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Coffee Table
+      supported_features: 45
+    light.reading:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 84
+      linkquality: 68
+      state: 'off'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Reading
+      supported_features: 45
+    light.table:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 33
+      linkquality: 68
+      state: 'off'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Table
+      supported_features: 45
+    light.table_2:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      brightness: 43
+      linkquality: 68
+      state: 'off'
+      update:
+        state: idle
+      update_available: false
+      friendly_name: Table 2
+      supported_features: 45
+    switch.kitchen_light_lower:
+      friendly_name: Kitchen Light Lower
+      icon: hass:lightbulb
+      state: 'off'
+    switch.kitchen_light_upper:
+      friendly_name: Kitchen Light Upper
+      icon: hass:lightbulb
+      state: 'off'
