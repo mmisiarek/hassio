@@ -1,0 +1,30 @@
+switch_off_livingroom_light:
+  alias: Switch Off Livingroom Light
+  sequence:
+  - service: light.turn_off
+    target:
+      area_id: living_room
+  - type: turn_off
+    device_id: c647300c0af343d2b24eae0d53ec7352
+    entity_id: switch.kitchen_light_lower
+    domain: switch
+  - type: turn_off
+    device_id: c647300c0af343d2b24eae0d53ec7352
+    entity_id: switch.kitchen_light_upper
+    domain: switch
+  mode: single
+turn_off_all_the_lights:
+  alias: Turn Off All The Lights
+  sequence:
+  - service: script.switch_off_livingroom_light
+  - service: light.turn_off
+    target:
+      area_id: miki_s_room
+      device_id:
+      - 9516db1257b623c297e2cc11862037c3
+      - 4b8279041cf7027ce05670210a0c0ba4
+  - type: turn_off
+    device_id: d3545e1f2ea774f413f30115203a0ace
+    entity_id: switch.miki_light
+    domain: switch
+  mode: single

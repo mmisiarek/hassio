@@ -10,6 +10,38 @@
                     "badges": [],
                     "cards": [
                         {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "markdown",
+                                    "content": "# Quick Actions"
+                                },
+                                {
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "button",
+                                            "entity": "script.switch_off_livingroom_light",
+                                            "icon": "mdi:power",
+                                            "name": "Turn Off Living Room Lights",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            }
+                                        },
+                                        {
+                                            "type": "button",
+                                            "entity": "script.turn_off_all_the_lights",
+                                            "icon": "mdi:power-plug-outline",
+                                            "name": "Turn Off All The Lights",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
                             "type": "horizontal-stack",
                             "cards": [
                                 {
@@ -45,24 +77,15 @@
                                                     "type": "horizontal-stack",
                                                     "cards": [
                                                         {
-                                                            "type": "button",
-                                                            "tap_action": {
-                                                                "action": "toggle"
-                                                            },
+                                                            "type": "light",
                                                             "entity": "light.one_photo"
                                                         },
                                                         {
-                                                            "type": "button",
-                                                            "tap_action": {
-                                                                "action": "toggle"
-                                                            },
+                                                            "type": "light",
                                                             "entity": "light.gallery"
                                                         },
                                                         {
-                                                            "type": "button",
-                                                            "tap_action": {
-                                                                "action": "toggle"
-                                                            },
+                                                            "type": "light",
                                                             "entity": "light.big_photos"
                                                         }
                                                     ]
@@ -71,45 +94,30 @@
                                                     "type": "horizontal-stack",
                                                     "cards": [
                                                         {
-                                                            "type": "button",
-                                                            "tap_action": {
-                                                                "action": "toggle"
-                                                            },
+                                                            "type": "light",
                                                             "entity": "light.table",
                                                             "show_state": false
                                                         },
                                                         {
-                                                            "type": "button",
-                                                            "tap_action": {
-                                                                "action": "toggle"
-                                                            },
+                                                            "type": "light",
                                                             "entity": "light.table_2",
                                                             "show_state": false
                                                         }
                                                     ]
                                                 },
                                                 {
-                                                    "type": "button",
-                                                    "tap_action": {
-                                                        "action": "toggle"
-                                                    },
+                                                    "type": "light",
                                                     "entity": "light.thelamp"
                                                 },
                                                 {
                                                     "type": "horizontal-stack",
                                                     "cards": [
                                                         {
-                                                            "type": "button",
-                                                            "tap_action": {
-                                                                "action": "toggle"
-                                                            },
+                                                            "type": "light",
                                                             "entity": "light.coffee_table"
                                                         },
                                                         {
-                                                            "type": "button",
-                                                            "tap_action": {
-                                                                "action": "toggle"
-                                                            },
+                                                            "type": "light",
                                                             "entity": "light.reading"
                                                         }
                                                     ]
@@ -125,15 +133,49 @@
                             "cards": [
                                 {
                                     "type": "markdown",
+                                    "content": "# BATHROOM"
+                                },
+                                {
+                                    "type": "light",
+                                    "entity": "light.bathroom"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "markdown",
                                     "content": "# MIKI"
                                 },
                                 {
-                                    "type": "button",
-                                    "tap_action": {
-                                        "action": "toggle"
-                                    },
-                                    "entity": "switch.miki_light",
-                                    "icon": "hass:lightbulb"
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "entity": "switch.miki_light"
+                                        },
+                                        {
+                                            "type": "light",
+                                            "entity": "light.miki_yeelight_lamp"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "vertical-stack",
+                            "cards": [
+                                {
+                                    "type": "markdown",
+                                    "content": "# HALLWAY"
+                                },
+                                {
+                                    "type": "light",
+                                    "entity": "light.hallway"
                                 }
                             ]
                         }

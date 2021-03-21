@@ -146,7 +146,11 @@
     device_id: 58c582146791e569d76b20346b88b80e
     entity_id: binary_sensor.motion_hallway_occupancy
     domain: binary_sensor
-  condition: []
+  condition:
+  - condition: sun
+    before: sunrise
+    after: sunset
+    after_offset: -00:45:00
   action:
   - type: turn_on
     device_id: 9516db1257b623c297e2cc11862037c3
