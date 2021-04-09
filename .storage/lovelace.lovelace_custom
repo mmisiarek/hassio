@@ -174,8 +174,21 @@
                                     "content": "# HALLWAY"
                                 },
                                 {
-                                    "type": "light",
-                                    "entity": "light.hallway"
+                                    "type": "horizontal-stack",
+                                    "cards": [
+                                        {
+                                            "type": "button",
+                                            "tap_action": {
+                                                "action": "toggle"
+                                            },
+                                            "entity": "switch.hallway_main",
+                                            "name": "Main"
+                                        },
+                                        {
+                                            "type": "light",
+                                            "entity": "light.hallway"
+                                        }
+                                    ]
                                 }
                             ]
                         }

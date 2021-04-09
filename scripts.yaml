@@ -28,3 +28,11 @@ turn_off_all_the_lights:
     entity_id: switch.miki_light
     domain: switch
   mode: single
+turn_off_tv:
+  alias: Turn off TV
+  sequence:
+  - service: webostv.command
+    data:
+      entity_id: media_player.lg_tv
+      command: system/turnOff
+  mode: single

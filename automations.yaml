@@ -147,10 +147,13 @@
     entity_id: binary_sensor.motion_hallway_occupancy
     domain: binary_sensor
   condition:
-  - condition: sun
-    before: sunrise
-    after: sunset
-    after_offset: -00:45:00
+  - condition: or
+    conditions:
+    - condition: sun
+      after: sunset
+      after_offset: -00:30:00
+    - condition: sun
+      before: sunrise
   action:
   - type: turn_on
     device_id: 9516db1257b623c297e2cc11862037c3
@@ -173,6 +176,10 @@
     device_id: 9516db1257b623c297e2cc11862037c3
     entity_id: light.hallway
     domain: light
+  - type: turn_off
+    device_id: d4b5406cefee6012101dc559beac1218
+    entity_id: switch.hallway_main
+    domain: switch
   mode: single
 - id: '1615571751745'
   alias: Miki motion not detected
@@ -318,4 +325,20 @@
   condition: []
   action:
   - scene: scene.dinner
+  mode: single
+- id: '1618002495896'
+  alias: iOS bedtime
+  description: ''
+  trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionID: bedtime
+  condition: []
+  action:
+  - service: script.turn_off_all_the_lights
+  - service: webostv.command
+    data:
+      entity_id: media_player.lg_tv
+      command: system/turnOff
   mode: single
