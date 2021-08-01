@@ -33,6 +33,59 @@ turn_off_tv:
   sequence:
   - service: webostv.command
     data:
-      entity_id: media_player.lg_tv
+      entity_id: media_player.lg65
       command: system/turnOff
   mode: single
+357_on_tv:
+  alias: 357 on TV
+  sequence:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.wake_on_lan
+  - service: media_player.select_source
+    target:
+      entity_id: media_player.lg65
+    data:
+      source: Radio Internetowe - myTuner
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
+  - service: notify.lg65
+    data:
+      message: Radio 357 on LG TV
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - service: webostv.command
+    data:
+      entity_id: media_player.lg65
+      command: com.webos.service.tvpower/power/turnOffScreen
+  - service: media_player.volume_set
+    target:
+      entity_id: media_player.lg65
+    data:
+      volume_level: 0.07
+  mode: single
+  icon: mdi:radio
+tv_screen_off:
+  alias: TV Screen Off
+  sequence:
+  - service: webostv.command
+    data:
+      entity_id: media_player.lg65
+      command: com.webos.service.tvpower/power/turnOffScreen
+  mode: single
+  icon: mdi:television-classic-off
+tv_screen_on:
+  alias: TV Screen On
+  sequence:
+  - service: webostv.command
+    data:
+      entity_id: media_player.lg65
+      command: com.webos.service.tvpower/power/turnOnScreen
+  mode: single
+  icon: mdi:television-classic

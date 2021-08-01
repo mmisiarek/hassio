@@ -204,7 +204,7 @@
                             "type": "horizontal-stack",
                             "cards": [
                                 {
-                                    "entity": "media_player.lg_tv",
+                                    "entity": "media_player.lg65",
                                     "hide": {
                                         "power_state": false
                                     },
@@ -255,7 +255,7 @@
                                             {
                                                 "data": {
                                                     "button": "MENU",
-                                                    "entity_id": "media_player.lg_tv"
+                                                    "entity_id": "media_player.lg65"
                                                 },
                                                 "id": "webostv.button",
                                                 "type": "service",
@@ -268,7 +268,7 @@
                                             {
                                                 "data": {
                                                     "button": "HOME",
-                                                    "entity_id": "media_player.lg_tv"
+                                                    "entity_id": "media_player.lg65"
                                                 },
                                                 "id": "webostv.button",
                                                 "type": "service",
@@ -277,7 +277,7 @@
                                             {
                                                 "data": {
                                                     "button": "UP",
-                                                    "entity_id": "media_player.lg_tv"
+                                                    "entity_id": "media_player.lg65"
                                                 },
                                                 "icon": "mdi:arrow-up-bold",
                                                 "id": "webostv.button",
@@ -286,7 +286,7 @@
                                             {
                                                 "data": {
                                                     "button": "CHANNELUP",
-                                                    "entity_id": "media_player.lg_tv"
+                                                    "entity_id": "media_player.lg65"
                                                 },
                                                 "icon": "mdi:arrow-up-box",
                                                 "id": "webostv.button",
@@ -295,7 +295,7 @@
                                             {
                                                 "data": {
                                                     "button": "LEFT",
-                                                    "entity_id": "media_player.lg_tv"
+                                                    "entity_id": "media_player.lg65"
                                                 },
                                                 "icon": "mdi:arrow-left-bold",
                                                 "id": "webostv.button",
@@ -304,7 +304,7 @@
                                             {
                                                 "data": {
                                                     "button": "ENTER",
-                                                    "entity_id": "media_player.lg_tv"
+                                                    "entity_id": "media_player.lg65"
                                                 },
                                                 "id": "webostv.button",
                                                 "name": "Enter",
@@ -313,7 +313,7 @@
                                             {
                                                 "data": {
                                                     "button": "RIGHT",
-                                                    "entity_id": "media_player.lg_tv"
+                                                    "entity_id": "media_player.lg65"
                                                 },
                                                 "icon": "mdi:arrow-right-bold",
                                                 "id": "webostv.button",
@@ -322,7 +322,7 @@
                                             {
                                                 "data": {
                                                     "button": "BACK",
-                                                    "entity_id": "media_player.lg_tv"
+                                                    "entity_id": "media_player.lg65"
                                                 },
                                                 "id": "webostv.button",
                                                 "name": "Back",
@@ -332,7 +332,7 @@
                                             {
                                                 "data": {
                                                     "button": "DOWN",
-                                                    "entity_id": "media_player.lg_tv"
+                                                    "entity_id": "media_player.lg65"
                                                 },
                                                 "icon": "mdi:arrow-down-bold",
                                                 "id": "webostv.button",
@@ -341,7 +341,7 @@
                                             {
                                                 "data": {
                                                     "button": "CHANNELUP",
-                                                    "entity_id": "media_player.lg_tv"
+                                                    "entity_id": "media_player.lg65"
                                                 },
                                                 "icon": "mdi:arrow-down-box",
                                                 "id": "webostv.button",
@@ -386,7 +386,7 @@
                         },
                         {
                             "type": "media-control",
-                            "entity": "media_player.lg_tv"
+                            "entity": "media_player.lg65"
                         },
                         {
                             "type": "entities",

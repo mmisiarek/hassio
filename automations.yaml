@@ -339,6 +339,135 @@
   - service: script.turn_off_all_the_lights
   - service: webostv.command
     data:
-      entity_id: media_player.lg_tv
+      entity_id: media_player.lg65
       command: system/turnOff
+  mode: single
+- id: '1627812499495'
+  alias: iOS TV Screen OFF
+  description: ''
+  trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionID: tv_screen_off
+  condition: []
+  action:
+  - service: webostv.command
+    data:
+      entity_id: media_player.lg65
+      command: com.webos.service.tvpower/power/turnOffScreen
+  mode: single
+- id: '1627812662525'
+  alias: iOS TV Screen ON
+  description: ''
+  trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionID: tv_screen_on
+  condition: []
+  action:
+  - service: webostv.command
+    data:
+      entity_id: media_player.lg65
+      command: com.webos.service.tvpower/power/turnOnScreen
+  mode: single
+- id: '1627813915269'
+  alias: iOS My Tuner
+  description: ''
+  trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionID: mytuner
+  condition: []
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.wake_on_lan
+  - service: media_player.select_source
+    target:
+      entity_id: media_player.lg65
+    data:
+      source: Radio Internetowe - myTuner
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 2
+      milliseconds: 0
+  - service: notify.lg65
+    data:
+      message: Miłego słuchania
+      title: Siemka
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
+  - service: webostv.command
+    data:
+      entity_id: media_player.lg65
+      command: com.webos.service.tvpower/power/turnOffScreen
+  - service: media_player.volume_set
+    target:
+      entity_id: media_player.lg65
+    data:
+      volume_level: 0.07
+  mode: single
+- id: '1627834627174'
+  alias: Switch Kitchen Double Click
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: e2af59fff0c4ae26eaa929fb6b5797e5
+    type: click
+    subtype: double
+    discovery_id: 0x00158d0002b02956 click_double
+  condition: []
+  action:
+  - service: script.357_on_tv
+  mode: single
+- id: '1627834732390'
+  alias: Switch Kitchen Hold Action
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: e2af59fff0c4ae26eaa929fb6b5797e5
+    type: action
+    subtype: hold
+    discovery_id: 0x00158d0002b02956 action_hold
+  condition: []
+  action:
+  - service: script.turn_off_tv
+  - service: script.turn_off_all_the_lights
+  mode: single
+- id: '1627835174281'
+  alias: Switch Kitchen Triple Click
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: e2af59fff0c4ae26eaa929fb6b5797e5
+    type: click
+    subtype: triple
+    discovery_id: 0x00158d0002b02956 click_triple
+  condition: []
+  action:
+  - service: script.tv_screen_on
+  mode: single
+- id: '1627835383939'
+  alias: Switch Kitchen Quadruple click
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: e2af59fff0c4ae26eaa929fb6b5797e5
+    type: click
+    subtype: quadruple
+    discovery_id: 0x00158d0002b02956 click_quadruple
+  condition: []
+  action:
+  - service: script.tv_screen_off
   mode: single

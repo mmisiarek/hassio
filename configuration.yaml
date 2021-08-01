@@ -11,17 +11,15 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
-switch:
-  - platform: wake_on_lan
-    mac: !secret lgtv_mac_address
+wake_on_lan:
 
 webostv:
-  host: 192.168.1.116
-  name: LG TV
+  host: 192.168.1.115
+  name: LG65
   turn_on_action:
-    service: switch.turn_on
-    target:
-      entity_id: switch.wake_on_lan
+    service: wake_on_lan.send_magic_packet
+    data:
+      mac: !secret lgtv_mac_address
 
 
 fan:
@@ -54,3 +52,37 @@ ios:
       icon:
         icon: weather-night
         color: "#ffffff"
+    - name: tv_screen_off
+      background_color: "#000000"
+      label:
+        text: "Screen Off"
+        color: "#ffffff"
+      icon:
+        icon: tv-classic-off
+        color: "#ffffff"
+    - name: tv_screen_on
+      background_color: "#000000"
+      label:
+        text: "Screen On"
+        color: "#ffffff"
+      icon:
+        icon: tv-classic
+        color: "#ffffff"
+        
+
+switch:
+  - platform: wake_on_lan
+    mac: !secret lgtv_mac_address
+  - platform: template
+    switches: 
+      tv_screen:
+        turn_on:
+          - service: webostv.command
+            data:
+              entity_id: media_player.lg65
+              command: com.webos.service.tvpower/power/turnOnScreen
+        turn_off:
+          - service: webostv.command
+            data:
+              entity_id: media_player.lg65
+              command: com.webos.service.tvpower/power/turnOffScreen
