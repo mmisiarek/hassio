@@ -373,6 +373,10 @@
                             ],
                             "title": "Router",
                             "state_color": false
+                        },
+                        {
+                            "type": "media-control",
+                            "entity": "media_player.living_room"
                         }
                     ]
                 },
