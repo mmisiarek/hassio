@@ -46,6 +46,9 @@
     device_id: 4b8279041cf7027ce05670210a0c0ba4
     entity_id: light.bathroom
     domain: light
+  - service: media_player.media_stop
+    target:
+      entity_id: media_player.living_room_speaker
   mode: single
 - id: '1615485934179'
   alias: Switch Miki Single Click
@@ -170,16 +173,17 @@
     device_id: 58c582146791e569d76b20346b88b80e
     entity_id: binary_sensor.motion_hallway_occupancy
     domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 10
+      milliseconds: 0
   condition: []
   action:
   - type: turn_off
     device_id: 9516db1257b623c297e2cc11862037c3
     entity_id: light.hallway
     domain: light
-  - type: turn_off
-    device_id: d4b5406cefee6012101dc559beac1218
-    entity_id: switch.hallway_main
-    domain: switch
   mode: single
 - id: '1615571751745'
   alias: Miki motion not detected
@@ -341,6 +345,9 @@
     data:
       entity_id: media_player.lg65
       command: system/turnOff
+  - service: media_player.turn_off
+    target:
+      device_id: b00f52bebb07aa8730123c99369f6f7f
   mode: single
 - id: '1627812499495'
   alias: iOS TV Screen OFF
@@ -470,4 +477,38 @@
   condition: []
   action:
   - service: script.tv_screen_off
+  mode: single
+- id: '1649661059302'
+  alias: Hallway motion not detected for longer time
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: 58c582146791e569d76b20346b88b80e
+    entity_id: binary_sensor.motion_hallway_occupancy
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 3
+      seconds: 0
+      milliseconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: d4b5406cefee6012101dc559beac1218
+    entity_id: switch.hallway_main
+    domain: switch
+  mode: single
+- id: '1649703625131'
+  alias: Music in WC On
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: cbe0d22ee9a4bbc4482e9ca2de62b31a
+    entity_id: binary_sensor.motion_bathroom_occupancy
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: script.play_357_on_home_mini
   mode: single
