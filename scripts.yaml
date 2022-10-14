@@ -90,12 +90,22 @@ tv_screen_on:
   mode: single
   icon: mdi:television-classic
 play_357_on_home_mini:
-  alias: Play 357 on Goo
+  alias: 357 on bathroom mini
   sequence:
   - service: media_player.play_media
     target:
       entity_id: media_player.living_room_speaker
     data:
-      media_content_type: audio/mp4
-      media_content_id: https://n12a-eu.rcs.revma.com/ye5kghkgcm0uv
+      media_content_type: music
+      media_content_id: https://n10a-eu.rcs.revma.com/an1ugyygzk8uv
+  mode: single
+357_on_bedroom_mini:
+  alias: 357 on bedroom mini
+  sequence:
+  - service: media_player.play_media
+    data:
+      media_content_id: https://n09a-eu.rcs.revma.com/ye5kghkgcm0uv
+      media_content_type: music
+    target:
+      entity_id: media_player.bedroom_speaker
   mode: single

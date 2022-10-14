@@ -46,9 +46,6 @@
     device_id: 4b8279041cf7027ce05670210a0c0ba4
     entity_id: light.bathroom
     domain: light
-  - service: media_player.media_stop
-    target:
-      entity_id: media_player.living_room_speaker
   mode: single
 - id: '1615485934179'
   alias: Switch Miki Single Click
@@ -135,10 +132,12 @@
     discovery_id: 0x00158d0004023b42 click_double
   condition: []
   action:
-  - type: toggle
-    device_id: d909a97685bcbb28685fdf69455f9aa1
-    entity_id: light.miki_yeelight_lamp
-    domain: light
+  - service: script.357_on_bedroom_mini
+  - service: media_player.volume_set
+    target:
+      entity_id: media_player.bedroom_speaker
+    data:
+      volume_level: 0.15
   mode: single
 - id: '1615571642770'
   alias: Hallway motion detected
@@ -184,6 +183,10 @@
     device_id: 9516db1257b623c297e2cc11862037c3
     entity_id: light.hallway
     domain: light
+  - type: turn_off
+    device_id: d4b5406cefee6012101dc559beac1218
+    entity_id: switch.hallway_main
+    domain: switch
   mode: single
 - id: '1615571751745'
   alias: Miki motion not detected
@@ -508,7 +511,55 @@
     device_id: cbe0d22ee9a4bbc4482e9ca2de62b31a
     entity_id: binary_sensor.motion_bathroom_occupancy
     domain: binary_sensor
-  condition: []
+  condition:
+  - condition: not
+    conditions:
+    - condition: device
+      device_id: 3fa387ec5f93423ffb0f63a7b1e961ed
+      domain: media_player
+      entity_id: media_player.living_room_speaker
+      type: is_playing
   action:
   - service: script.play_357_on_home_mini
+  - service: media_player.volume_set
+    target:
+      entity_id: media_player.living_room_speaker
+    data:
+      volume_level: 0.15
+  mode: single
+- id: '1649775318951'
+  alias: Switch Miki Long Press
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: ad969014f8a252a272761601cd0e52a8
+    type: click
+    subtype: long
+    discovery_id: 0x00158d0004023b42 click_long
+  condition: []
+  action:
+  - service: media_player.media_stop
+    target:
+      entity_id: media_player.bedroom_speaker
+  mode: single
+- id: '1649780424466'
+  alias: Music in WC Off
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: cbe0d22ee9a4bbc4482e9ca2de62b31a
+    entity_id: binary_sensor.motion_bathroom_occupancy
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
+  condition: []
+  action:
+  - service: media_player.media_pause
+    target:
+      entity_id: media_player.living_room_speaker
   mode: single
