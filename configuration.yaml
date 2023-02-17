@@ -86,3 +86,14 @@ switch:
             data:
               entity_id: media_player.lg65
               command: com.webos.service.tvpower/power/turnOffScreen
+              
+template:
+  - sensor:
+      - name: "overheating"
+        state: >
+          {% set actual = state_attr('climate.thermostat_living_room', 'local_temperature') | float %}
+          {% set desired = state_attr('climate.thermostat_living_room', 'current_heating_setpoint') | float %}
+
+          {{ actual > desired }}
+
+

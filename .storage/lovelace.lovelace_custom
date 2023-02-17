@@ -1,419 +1,429 @@
 {
-    "version": 1,
-    "key": "lovelace.lovelace_custom",
-    "data": {
-        "config": {
-            "title": "Home",
-            "views": [
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.lovelace_custom",
+  "data": {
+    "config": {
+      "title": "Home",
+      "views": [
+        {
+          "icon": "mdi:lightbulb-on",
+          "badges": [],
+          "cards": [
+            {
+              "type": "vertical-stack",
+              "cards": [
                 {
-                    "icon": "mdi:lightbulb-on",
-                    "badges": [],
-                    "cards": [
-                        {
-                            "type": "vertical-stack",
-                            "cards": [
-                                {
-                                    "type": "markdown",
-                                    "content": "# Quick Actions"
-                                },
-                                {
-                                    "type": "horizontal-stack",
-                                    "cards": [
-                                        {
-                                            "type": "button",
-                                            "entity": "script.switch_off_livingroom_light",
-                                            "icon": "mdi:power",
-                                            "name": "Turn Off Living Room Lights",
-                                            "tap_action": {
-                                                "action": "toggle"
-                                            }
-                                        },
-                                        {
-                                            "type": "button",
-                                            "entity": "script.turn_off_all_the_lights",
-                                            "icon": "mdi:power-plug-outline",
-                                            "name": "Turn Off All The Lights",
-                                            "tap_action": {
-                                                "action": "toggle"
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "horizontal-stack",
-                            "cards": [
-                                {
-                                    "type": "vertical-stack",
-                                    "cards": [
-                                        {
-                                            "type": "vertical-stack",
-                                            "cards": [
-                                                {
-                                                    "type": "markdown",
-                                                    "content": "# LIVING ROOM"
-                                                },
-                                                {
-                                                    "type": "horizontal-stack",
-                                                    "cards": [
-                                                        {
-                                                            "type": "button",
-                                                            "tap_action": {
-                                                                "action": "toggle"
-                                                            },
-                                                            "entity": "switch.kitchen_light_lower"
-                                                        },
-                                                        {
-                                                            "type": "button",
-                                                            "tap_action": {
-                                                                "action": "toggle"
-                                                            },
-                                                            "entity": "switch.kitchen_light_upper"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "type": "horizontal-stack",
-                                                    "cards": [
-                                                        {
-                                                            "type": "light",
-                                                            "entity": "light.one_photo"
-                                                        },
-                                                        {
-                                                            "type": "light",
-                                                            "entity": "light.gallery"
-                                                        },
-                                                        {
-                                                            "type": "light",
-                                                            "entity": "light.big_photos"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "type": "horizontal-stack",
-                                                    "cards": [
-                                                        {
-                                                            "type": "light",
-                                                            "entity": "light.table",
-                                                            "show_state": false
-                                                        },
-                                                        {
-                                                            "type": "light",
-                                                            "entity": "light.table_2",
-                                                            "show_state": false
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "type": "light",
-                                                    "entity": "light.thelamp"
-                                                },
-                                                {
-                                                    "type": "horizontal-stack",
-                                                    "cards": [
-                                                        {
-                                                            "type": "light",
-                                                            "entity": "light.coffee_table"
-                                                        },
-                                                        {
-                                                            "type": "light",
-                                                            "entity": "light.reading"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "vertical-stack",
-                            "cards": [
-                                {
-                                    "type": "markdown",
-                                    "content": "# BATHROOM"
-                                },
-                                {
-                                    "type": "light",
-                                    "entity": "light.bathroom"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "vertical-stack",
-                            "cards": [
-                                {
-                                    "type": "markdown",
-                                    "content": "# MIKI"
-                                },
-                                {
-                                    "type": "horizontal-stack",
-                                    "cards": [
-                                        {
-                                            "type": "button",
-                                            "tap_action": {
-                                                "action": "toggle"
-                                            },
-                                            "entity": "switch.miki_light"
-                                        },
-                                        {
-                                            "type": "light",
-                                            "entity": "light.miki_yeelight_lamp"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "type": "vertical-stack",
-                            "cards": [
-                                {
-                                    "type": "markdown",
-                                    "content": "# HALLWAY"
-                                },
-                                {
-                                    "type": "horizontal-stack",
-                                    "cards": [
-                                        {
-                                            "type": "button",
-                                            "tap_action": {
-                                                "action": "toggle"
-                                            },
-                                            "entity": "switch.hallway_main",
-                                            "name": "Main"
-                                        },
-                                        {
-                                            "type": "light",
-                                            "entity": "light.hallway"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                  "type": "markdown",
+                  "content": "# Quick Actions"
                 },
                 {
-                    "title": "Media",
-                    "path": "media",
-                    "icon": "mdi:play-pause",
-                    "badges": [],
-                    "cards": [
-                        {
-                            "type": "horizontal-stack",
-                            "cards": [
-                                {
-                                    "entity": "media_player.lg65",
-                                    "hide": {
-                                        "power_state": false
-                                    },
-                                    "hide_controls": true,
-                                    "idle_view": "true",
-                                    "shortcuts": {
-                                        "buttons": [
-                                            {
-                                                "icon": "mdi:netflix",
-                                                "id": "Netflix",
-                                                "name": "Netflix",
-                                                "type": "source"
-                                            },
-                                            {
-                                                "icon": "mdi:television-box",
-                                                "id": "Canal Polska",
-                                                "name": "C+",
-                                                "type": "source"
-                                            },
-                                            {
-                                                "icon": "mdi:youtube",
-                                                "id": "YouTube",
-                                                "name": "YouTube",
-                                                "type": "source"
-                                            },
-                                            {
-                                                "icon": "mdi:twitch",
-                                                "id": "Twitch",
-                                                "name": "Twitch",
-                                                "type": "source"
-                                            },
-                                            {
-                                                "icon": "mdi:radio",
-                                                "id": "Radio Internetowe - myTuner",
-                                                "name": "Radio",
-                                                "type": "source"
-                                            },
-                                            {
-                                                "icon": "mdi:spotify",
-                                                "id": "Spotify - Muzyka i podcasty",
-                                                "name": "Spotify",
-                                                "type": "source"
-                                            },
-                                            {
-                                                "id": " ",
-                                                "type": "source"
-                                            },
-                                            {
-                                                "data": {
-                                                    "button": "MENU",
-                                                    "entity_id": "media_player.lg65"
-                                                },
-                                                "id": "webostv.button",
-                                                "type": "service",
-                                                "icon": "mdi:menu"
-                                            },
-                                            {
-                                                "id": " ",
-                                                "type": "source"
-                                            },
-                                            {
-                                                "data": {
-                                                    "button": "HOME",
-                                                    "entity_id": "media_player.lg65"
-                                                },
-                                                "id": "webostv.button",
-                                                "type": "service",
-                                                "icon": "mdi:home"
-                                            },
-                                            {
-                                                "data": {
-                                                    "button": "UP",
-                                                    "entity_id": "media_player.lg65"
-                                                },
-                                                "icon": "mdi:arrow-up-bold",
-                                                "id": "webostv.button",
-                                                "type": "service"
-                                            },
-                                            {
-                                                "data": {
-                                                    "button": "CHANNELUP",
-                                                    "entity_id": "media_player.lg65"
-                                                },
-                                                "icon": "mdi:arrow-up-box",
-                                                "id": "webostv.button",
-                                                "type": "service"
-                                            },
-                                            {
-                                                "data": {
-                                                    "button": "LEFT",
-                                                    "entity_id": "media_player.lg65"
-                                                },
-                                                "icon": "mdi:arrow-left-bold",
-                                                "id": "webostv.button",
-                                                "type": "service"
-                                            },
-                                            {
-                                                "data": {
-                                                    "button": "ENTER",
-                                                    "entity_id": "media_player.lg65"
-                                                },
-                                                "id": "webostv.button",
-                                                "name": "Enter",
-                                                "type": "service"
-                                            },
-                                            {
-                                                "data": {
-                                                    "button": "RIGHT",
-                                                    "entity_id": "media_player.lg65"
-                                                },
-                                                "icon": "mdi:arrow-right-bold",
-                                                "id": "webostv.button",
-                                                "type": "service"
-                                            },
-                                            {
-                                                "data": {
-                                                    "button": "BACK",
-                                                    "entity_id": "media_player.lg65"
-                                                },
-                                                "id": "webostv.button",
-                                                "name": "Back",
-                                                "type": "service",
-                                                "icon": "mdi:backup-restore"
-                                            },
-                                            {
-                                                "data": {
-                                                    "button": "DOWN",
-                                                    "entity_id": "media_player.lg65"
-                                                },
-                                                "icon": "mdi:arrow-down-bold",
-                                                "id": "webostv.button",
-                                                "type": "service"
-                                            },
-                                            {
-                                                "data": {
-                                                    "button": "CHANNELUP",
-                                                    "entity_id": "media_player.lg65"
-                                                },
-                                                "icon": "mdi:arrow-down-box",
-                                                "id": "webostv.button",
-                                                "type": "service"
-                                            }
-                                        ],
-                                        "columns": 3
-                                    },
-                                    "type": "custom:mini-media-player",
-                                    "volume_stateless": true
-                                }
-                            ]
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "sensor.asuswrt_devices_connected"
-                                },
-                                {
-                                    "entity": "sensor.asuswrt_download_speed"
-                                },
-                                {
-                                    "entity": "sensor.asuswrt_upload_speed"
-                                },
-                                {
-                                    "entity": "device_tracker.michals_iphone"
-                                }
-                            ],
-                            "title": "Router",
-                            "state_color": false
-                        },
-                        {
-                            "type": "media-control",
-                            "entity": "media_player.living_room"
-                        }
-                    ]
-                },
-                {
-                    "path": "default_view",
-                    "title": "Home",
-                    "cards": [
-                        {
-                            "type": "media-control",
-                            "entity": "media_player.living_room_speaker"
-                        },
-                        {
-                            "type": "media-control",
-                            "entity": "media_player.lg65"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                "person.michal"
-                            ],
-                            "title": "Person"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                "sun.sun"
-                            ],
-                            "title": "Sun"
-                        },
-                        {
-                            "type": "weather-forecast",
-                            "entity": "weather.home",
-                            "show_forecast": false
-                        }
-                    ]
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "button",
+                      "entity": "script.switch_off_livingroom_light",
+                      "icon": "mdi:power",
+                      "name": "Turn Off Living Room Lights",
+                      "tap_action": {
+                        "action": "toggle"
+                      }
+                    },
+                    {
+                      "type": "button",
+                      "entity": "script.turn_off_all_the_lights",
+                      "icon": "mdi:power-plug-outline",
+                      "name": "Turn Off All The Lights",
+                      "tap_action": {
+                        "action": "toggle"
+                      }
+                    }
+                  ]
                 }
-            ]
+              ]
+            },
+            {
+              "type": "horizontal-stack",
+              "cards": [
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "vertical-stack",
+                      "cards": [
+                        {
+                          "type": "markdown",
+                          "content": "# LIVING ROOM"
+                        },
+                        {
+                          "type": "horizontal-stack",
+                          "cards": [
+                            {
+                              "type": "button",
+                              "tap_action": {
+                                "action": "toggle"
+                              },
+                              "entity": "switch.kitchen_light_lower"
+                            },
+                            {
+                              "type": "button",
+                              "tap_action": {
+                                "action": "toggle"
+                              },
+                              "entity": "switch.kitchen_light_upper"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "horizontal-stack",
+                          "cards": [
+                            {
+                              "type": "light",
+                              "entity": "light.one_photo"
+                            },
+                            {
+                              "type": "light",
+                              "entity": "light.gallery"
+                            },
+                            {
+                              "type": "light",
+                              "entity": "light.big_photos"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "horizontal-stack",
+                          "cards": [
+                            {
+                              "type": "light",
+                              "entity": "light.table",
+                              "show_state": false
+                            },
+                            {
+                              "type": "light",
+                              "entity": "light.table_2",
+                              "show_state": false
+                            }
+                          ]
+                        },
+                        {
+                          "type": "light",
+                          "entity": "light.thelamp"
+                        },
+                        {
+                          "type": "horizontal-stack",
+                          "cards": [
+                            {
+                              "type": "light",
+                              "entity": "light.coffee_table"
+                            },
+                            {
+                              "type": "light",
+                              "entity": "light.reading"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "markdown",
+                  "content": "# BATHROOM"
+                },
+                {
+                  "type": "light",
+                  "entity": "light.bathroom"
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "markdown",
+                  "content": "# MIKI"
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "button",
+                      "tap_action": {
+                        "action": "toggle"
+                      },
+                      "entity": "switch.miki_light"
+                    },
+                    {
+                      "type": "light",
+                      "entity": "light.miki_yeelight_lamp"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "markdown",
+                  "content": "# HALLWAY"
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "button",
+                      "tap_action": {
+                        "action": "toggle"
+                      },
+                      "entity": "switch.hallway_main",
+                      "name": "Main"
+                    },
+                    {
+                      "type": "light",
+                      "entity": "light.hallway"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Media",
+          "path": "media",
+          "icon": "mdi:play-pause",
+          "badges": [],
+          "cards": [
+            {
+              "type": "horizontal-stack",
+              "cards": [
+                {
+                  "entity": "media_player.lg65",
+                  "hide": {
+                    "power_state": false
+                  },
+                  "hide_controls": true,
+                  "idle_view": "true",
+                  "shortcuts": {
+                    "buttons": [
+                      {
+                        "icon": "mdi:netflix",
+                        "id": "Netflix",
+                        "name": "Netflix",
+                        "type": "source"
+                      },
+                      {
+                        "icon": "mdi:television-box",
+                        "id": "Canal Polska",
+                        "name": "C+",
+                        "type": "source"
+                      },
+                      {
+                        "icon": "mdi:youtube",
+                        "id": "YouTube",
+                        "name": "YouTube",
+                        "type": "source"
+                      },
+                      {
+                        "icon": "mdi:twitch",
+                        "id": "Twitch",
+                        "name": "Twitch",
+                        "type": "source"
+                      },
+                      {
+                        "icon": "mdi:radio",
+                        "id": "Radio Internetowe - myTuner",
+                        "name": "Radio",
+                        "type": "source"
+                      },
+                      {
+                        "icon": "mdi:spotify",
+                        "id": "Spotify - Muzyka i podcasty",
+                        "name": "Spotify",
+                        "type": "source"
+                      },
+                      {
+                        "id": " ",
+                        "type": "source"
+                      },
+                      {
+                        "data": {
+                          "button": "MENU",
+                          "entity_id": "media_player.lg65"
+                        },
+                        "id": "webostv.button",
+                        "type": "service",
+                        "icon": "mdi:menu"
+                      },
+                      {
+                        "id": " ",
+                        "type": "source"
+                      },
+                      {
+                        "data": {
+                          "button": "HOME",
+                          "entity_id": "media_player.lg65"
+                        },
+                        "id": "webostv.button",
+                        "type": "service",
+                        "icon": "mdi:home"
+                      },
+                      {
+                        "data": {
+                          "button": "UP",
+                          "entity_id": "media_player.lg65"
+                        },
+                        "icon": "mdi:arrow-up-bold",
+                        "id": "webostv.button",
+                        "type": "service"
+                      },
+                      {
+                        "data": {
+                          "button": "CHANNELUP",
+                          "entity_id": "media_player.lg65"
+                        },
+                        "icon": "mdi:arrow-up-box",
+                        "id": "webostv.button",
+                        "type": "service"
+                      },
+                      {
+                        "data": {
+                          "button": "LEFT",
+                          "entity_id": "media_player.lg65"
+                        },
+                        "icon": "mdi:arrow-left-bold",
+                        "id": "webostv.button",
+                        "type": "service"
+                      },
+                      {
+                        "data": {
+                          "button": "ENTER",
+                          "entity_id": "media_player.lg65"
+                        },
+                        "id": "webostv.button",
+                        "name": "Enter",
+                        "type": "service"
+                      },
+                      {
+                        "data": {
+                          "button": "RIGHT",
+                          "entity_id": "media_player.lg65"
+                        },
+                        "icon": "mdi:arrow-right-bold",
+                        "id": "webostv.button",
+                        "type": "service"
+                      },
+                      {
+                        "data": {
+                          "button": "BACK",
+                          "entity_id": "media_player.lg65"
+                        },
+                        "id": "webostv.button",
+                        "name": "Back",
+                        "type": "service",
+                        "icon": "mdi:backup-restore"
+                      },
+                      {
+                        "data": {
+                          "button": "DOWN",
+                          "entity_id": "media_player.lg65"
+                        },
+                        "icon": "mdi:arrow-down-bold",
+                        "id": "webostv.button",
+                        "type": "service"
+                      },
+                      {
+                        "data": {
+                          "button": "CHANNELUP",
+                          "entity_id": "media_player.lg65"
+                        },
+                        "icon": "mdi:arrow-down-box",
+                        "id": "webostv.button",
+                        "type": "service"
+                      }
+                    ],
+                    "columns": 3
+                  },
+                  "type": "custom:mini-media-player",
+                  "volume_stateless": true
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "sensor.asuswrt_devices_connected"
+                },
+                {
+                  "entity": "sensor.asuswrt_download_speed"
+                },
+                {
+                  "entity": "sensor.asuswrt_upload_speed"
+                },
+                {
+                  "entity": "device_tracker.michals_iphone"
+                }
+              ],
+              "title": "Router",
+              "state_color": false
+            },
+            {
+              "type": "media-control",
+              "entity": "media_player.living_room"
+            }
+          ]
+        },
+        {
+          "path": "default_view",
+          "title": "Home",
+          "cards": [
+            {
+              "type": "media-control",
+              "entity": "media_player.living_room_speaker"
+            },
+            {
+              "type": "media-control",
+              "entity": "media_player.lg65"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                "person.michal"
+              ],
+              "title": "Person"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                "sun.sun"
+              ],
+              "title": "Sun"
+            },
+            {
+              "type": "weather-forecast",
+              "entity": "weather.home",
+              "show_forecast": false
+            },
+            {
+              "type": "gauge",
+              "entity": "sensor.0x04cd15fffe3b64eb_position",
+              "name": "Otwarcie termostatu"
+            },
+            {
+              "type": "thermostat",
+              "entity": "climate.thermostat_living_room"
+            }
+          ]
         }
+      ]
     }
+  }
 }
